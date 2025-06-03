@@ -1,0 +1,24 @@
+# Required for X3F processing
+rawpy>=0.25.0           # LibRaw Python bindings for X3F support
+Pillow>=9.0.0           # Image processing and TIFF handling
+numpy>=1.20.0           # Array processing
+
+# Required for EXIF metadata handling
+piexif>=1.1.3           # EXIF data manipulation
+exifread>=3.0.0         # EXIF data extraction
+
+# Required for DNG format support
+tifffile>=2025.6.0      # Advanced TIFF/DNG writing capabilities
+imagecodecs>=2025.3.0   # Required for LZW compression in TIFF/DNG files
+
+# Required for analysis and preview (optional)
+matplotlib>=3.10.0      # For X3F analysis and preview plots
+
+# Required for GUI with drag & drop functionality
+tkinterdnd2>=0.3.0      # For drag and drop support in Tkinter
+
+# Standard library modules (included with Python):
+# tkinter                 # GUI framework
+# pathlib                 # Path handling
+# subprocess              # External command execution
+# threading               # Background processing
