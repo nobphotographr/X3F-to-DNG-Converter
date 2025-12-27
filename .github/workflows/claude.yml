@@ -21,5 +21,26 @@ jobs:
       issues: write
     steps:
       - uses: anthropics/claude-code-action@v1
+        id: claude
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
+      - name: Notify Slack
+        if: always()
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": "${{ job.status == 'success' && '✅' || '❌' }} Claude Code Action completed",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ job.status == 'success' && '✅ 成功' || '❌ 失敗' }}: *${{ github.repository }}*\n<${{ github.event.issue.html_url || github.event.pull_request.html_url }}|#${{ github.event.issue.number || github.event.pull_request.number }} ${{ github.event.issue.title || github.event.pull_request.title }}>"
+                  }
+                }
+              ]
+            }
