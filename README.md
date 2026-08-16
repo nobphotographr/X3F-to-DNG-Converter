@@ -1,6 +1,6 @@
 # X3F to DNG Converter
 
-Sigma Merrill／QuattroのX3Fを、サーバーへアップロードせずブラウザ内でLinear DNGへ変換するWebアプリです。
+Sigma Merrill／QuattroのX3Fを、サーバーへ送信せずブラウザ内でLinear DNGへ変換するWebアプリです。
 
 Public beta: <https://xpreview.iruagaru.com/x3f-to-dng/>
 

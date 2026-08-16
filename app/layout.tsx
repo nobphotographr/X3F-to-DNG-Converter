@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://xpreview.iruagaru.com"),
   title: "X3F to DNG Converter | iruagaru",
   description:
-    "Sigma Merrill／QuattroのX3Fを、アップロードせずブラウザ内でLinear DNGへ変換する無料ツールです。",
+    "Sigma Merrill／QuattroのX3Fを、サーバーへ送信せずブラウザ内でLinear DNGへ変換する無料ツールです。",
   alternates: { canonical },
   robots: {
     index: true,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "X3F to DNG Converter | iruagaru",
-    description: "Foveon X3Fをアップロードせず、ブラウザの中だけでLinear DNGへ変換します。",
+    description: "Foveon X3Fをサーバーへ送信せず、ブラウザの中だけでLinear DNGへ変換します。",
     url: canonical,
     siteName: "iruagaru photo tools",
     images: [{
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "X3F to DNG Converter | iruagaru",
-    description: "Foveon X3Fをアップロードせず、ブラウザの中だけでLinear DNGへ変換します。",
+    description: "Foveon X3Fをサーバーへ送信せず、ブラウザの中だけでLinear DNGへ変換します。",
     images: [socialImage],
   },
 };

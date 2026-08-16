@@ -251,7 +251,7 @@ export default function Home() {
 
       <section className="privacy-section">
         <p className="step-label">LOCAL BY DESIGN</p>
-        <div><h2>アップロードしない。</h2><p>ファイルの読み込み、現像、DNG生成はWebAssemblyを使って端末内で実行します。ページを閉じれば作業データは残りません。</p></div>
+        <div><h2>ファイルは、<br />外へ送らない。</h2><p>選んだX3Fの読み込み、現像、DNG生成は、WebAssemblyを使ってすべて端末内で実行します。ファイルをサーバーへ送信・保存することはありません。ページを閉じれば作業データも残りません。</p></div>
       </section>
 
       <footer>
