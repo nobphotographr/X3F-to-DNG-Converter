@@ -1,101 +1,47 @@
-# X3F to TIFF Converter for Photoshop
+# X3F to DNG Converter
 
-A professional X3F to TIFF converter specifically optimized for Sigma DP2 Merrill camera files, with full Photoshop and Lightroom compatibility.
+Sigma Merrill／QuattroのX3Fを、サーバーへアップロードせずブラウザ内でLinear DNGへ変換するWebアプリです。
+
+Public beta: <https://xpreview.iruagaru.com/x3f-to-dng/>
 
 ## Features
 
-✅ **Photoshop & Lightroom Compatible**
-- Direct TIFF output that opens seamlessly in Adobe software
-- No external dependencies required for end users
-- Universal format support across all photo editing software
+- 変換はWebAssemblyを使って端末内で完結
+- Linear DNG + lossless compression
+- 任意のノイズ低減
+- DP1/2/3 Merrill、SD1 Merrill、dp0/1/2/3 Quattro、sd Quattro/Hを対象
+- スマートフォンの共有シート／通常ダウンロードに対応
 
-✅ **Foveon Sensor Optimization**
-- AHD demosaic algorithm optimized for X3F files
-- sRGB gamma curve (2.222, 4.5) for accurate color reproduction
-- Auto brightness with optimal threshold for Sigma sensors
-- Designed specifically for Sigma DP2 Merrill
-
-✅ **Professional Features**
-- Full EXIF metadata preservation
-- 16-bit color depth (65,536 levels per channel)
-- High resolution output with no quality loss
-- Batch processing with drag & drop interface
-
-✅ **Easy Distribution**
-- Self-contained application
-- No Adobe software dependencies
-- Works on any computer
-- Perfect for sharing and archiving
-
-## Requirements
-
-- Python 3.8 or higher
-- Virtual environment (recommended)
-
-## Installation
-
-1. Clone this repository:
-```bash
-git clone https://github.com/nobphotographr/X3F-to-DNG-Converter.git
-cd X3F-to-DNG-Converter
-```
-
-2. Create and activate virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-### GUI Mode (Recommended)
-```bash
-python x3f_converter_rawpy.py
-```
-
-Features:
-- Drag & drop X3F files
-- Batch processing
-- Output directory selection
-- Real-time progress monitoring
-
-### Command Line Mode
-```bash
-python x3f_converter_rawpy.py file1.x3f file2.x3f [output_directory]
-```
-
-## Technical Details
-
-### Processing Pipeline
-1. **X3F File Reading**: Uses LibRaw (rawpy) for native X3F support
-2. **Foveon Processing**: Optimized demosaic algorithm for 3-layer sensor
-3. **Color Space**: sRGB conversion with proper gamma correction
-4. **Output**: 16-bit TIFF with full EXIF metadata
-
-### Supported Formats
-- **Input**: X3F files from Sigma DP2 Merrill
-- **Output**: 16-bit TIFF (Photoshop compatible)
+X3Iには対応していません。元のX3Fは必ず保持してください。
 
 ## Development
 
-This converter was developed specifically for Sigma DP2 Merrill X3F files with focus on:
-- Maximum Photoshop compatibility
-- Professional image quality
-- Easy distribution without external dependencies
+```bash
+npm install
+./scripts/build-wasm.sh
+npm run dev
+```
+
+静的サイトを書き出す場合:
+
+```bash
+npm run build
+```
+
+`out/` を `/x3f-to-dng/` 配下へ配置します。
+
+## Engine
+
+変換エンジンには [x3fuse-core](https://github.com/sagwaco/x3fuse-core) を使用しています。Web版に必要なメモリ上のDNG出力を追加し、正確な参照元を `vendor/x3fuse-core/` に同梱しています。
+
+参照コミット: `4435690328429a25ec9436ff750c01ce8fe95dba`
+
+ライセンスの詳細は [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) と `vendor/x3fuse-core/LICENSE` を参照してください。
+
+## Legacy desktop prototype
+
+以前のPython製X3F→TIFFプロトタイプは `legacy/` に保存しています。現在公開しているWeb版とは別実装です。
 
 ## License
 
-MIT License - see LICENSE file for details
-
-## Contributing
-
-Contributions welcome! Please feel free to submit pull requests or open issues.
-
-## Author
-
-Created for professional X3F workflow optimization.
+このリポジトリ固有のコードはMIT Licenseです。`vendor/` 以下の第三者コードには各ディレクトリ内のライセンスが適用されます。

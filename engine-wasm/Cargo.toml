@@ -1,0 +1,19 @@
+[package]
+name = "x3f-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+x3f-core = { path = "../vendor/x3fuse-core/crates/x3f-core" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"

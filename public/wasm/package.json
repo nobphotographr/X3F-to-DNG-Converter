@@ -1,0 +1,16 @@
+{
+  "name": "x3f-wasm",
+  "type": "module",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "files": [
+    "x3f_wasm_bg.wasm",
+    "x3f_wasm.js",
+    "x3f_wasm.d.ts"
+  ],
+  "main": "x3f_wasm.js",
+  "types": "x3f_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
