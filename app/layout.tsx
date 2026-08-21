@@ -5,11 +5,11 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const canonical = "https://xpreview.iruagaru.com/x3f-to-dng/";
-const socialImage = "https://xpreview.iruagaru.com/x3f-to-dng/og-x3f-to-dng.png?v=20260816-1";
+const canonical = "https://tools.iruagaru.com/x3f-to-dng/";
+const socialImage = "https://tools.iruagaru.com/x3f-to-dng/og-x3f-to-dng.png?v=20260816-1";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://xpreview.iruagaru.com"),
+  metadataBase: new URL("https://tools.iruagaru.com"),
   title: "X3F to DNG Converter | iruagaru",
   description:
     "Sigma Merrill／QuattroのX3Fを、サーバーへ送信せずブラウザ内でLinear DNGへ変換する無料ツールです。",

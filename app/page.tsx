@@ -158,8 +158,8 @@ export default function Home() {
         <a className="wordmark" href="../">iruagaru / photo tool</a>
         <span className="top-nav-links">
           <a href="../raw-to-dng/">RAW DNG ↗</a>
-          <a href="../convert/">Convert ↗</a>
-          <a href="../frame/">Frame ↗</a>
+          <a href="../image-converter/">Convert ↗</a>
+          <a href="../image-framer/">Frame ↗</a>
         </span>
       </nav>
 
